@@ -1,10 +1,10 @@
 <p align="center">
+    <br /><br />
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="allnodes/images/firedancer-dark-mode.png">
-      <img alt="Firedancer Allnodes Edition" src="allnodes/images/firedancer-light-mode.png">
+      <source media="(prefers-color-scheme: dark)" srcset="allnodes/images/firedancer-dark-mode.png" />
+      <img alt="Firedancer Allnodes Edition" src="allnodes/images/firedancer-light-mode.png" style="width: 16em" />
     </picture>
 </p>
-
 
 # Firedancer Solana validator with modifications from Allnodes
 

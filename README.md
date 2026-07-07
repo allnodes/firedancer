@@ -1,3 +1,49 @@
+<p align="center">
+    <br /><br />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="allnodes/images/firedancer-dark-mode.png" />
+      <img alt="Firedancer Allnodes Edition" src="allnodes/images/firedancer-light-mode.png" style="width: 16em" />
+    </picture>
+</p>
+
+# Firedancer Solana validator with modifications from Allnodes
+
+## Modifications made by Allnodes
+
+This repository features the following enhancements to the Firedancer codebase:
+
+### 1. Fast snapshot distribution
+
+✅ Only on [Allnodes Bare-Metal Servers](https://www.allnodes.com/hosting)
+
+Our infrastructure includes modifications that improve default snapshot downloading, which combined with
+ultra-high-speed channels deliver ultra-fast snapshot downloads. This dramatically reduces the initial sync time for
+new validators and enables faster deployment and recovery scenarios. The use of snapshot-finder or any other 3rd party
+download tools is no longer needed.
+
+### 2. Enhanced voting logic modifications
+
+✅ Only on [Allnodes Bare-Metal Servers](https://www.allnodes.com/hosting)
+
+Our validator implementation includes voting modifications developed by **Zantetsu | Shinobi Systems** that enhance the
+original voting logic.
+
+These modifications work by:
+
+- Taking the next votable slot that the original codebase identifies as potentially ready for voting
+- Applying additional criteria before casting the vote
+- Providing more sophisticated voting decision-making
+
+This enhancement improves validator consensus participation through more intelligent vote timing and slot evaluation.
+
+### 3. Hardware-optimized SHA256 patch
+
+Our validator implementation includes a third-party performance patch developed by **kagren**. It optimizes SHA256
+hashing operations using SHA-NI instructions available on modern AMD processors (Zen3, Zen4, and Zen5
+architectures). This enhancement significantly improves hashing performance for block verification and other
+cryptographic operations.
+
+
 # [Firedancer](https://jumpcrypto.com/firedancer/) 🔥💃
 
 Firedancer is a new validator client for Solana.
@@ -41,8 +87,8 @@ Firedancer currently only supports Linux and requires a relatively new
 kernel, at least v4.18 to build.
 
 ```console
-$ git clone --recurse-submodules https://github.com/firedancer-io/firedancer.git
-$ cd firedancer
+$ git clone --recurse-submodules https://github.com/allnodes/solana-firedancer.git
+$ cd solana-firedancer
 $ ./deps.sh +dev
 $ make -j run
 ```

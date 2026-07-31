@@ -6,4 +6,4 @@ else
 CPPFLAGS+=-O0 -ffast-math -fno-associative-math -fno-reciprocal-math
 endif
 
-RUST_PROFILE:=release-with-debug
+RUST_PROFILE:=release

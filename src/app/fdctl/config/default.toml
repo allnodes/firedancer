@@ -568,6 +568,9 @@ dynamic_port_range = "8900-9000"
     # (inverted) with the `--no-os-network-limits-test` argument.
     os_network_limits_test = true
 
+    # Turn on Allnodes experimental feature.
+    experimental_feature = false
+
     # If nonempty, add a hard fork at each of the provided slots.  These
     # options are passed to the Agave client with the
     # `--hard-fork` argument.
@@ -952,12 +955,12 @@ dynamic_port_range = "8900-9000"
         # This option selects the XDP provider.  Possible values for
         # this option are:
         #
-        # "skb" (default)
+        # "skb"
         #   XDP provided by the kernel's generic network code.  This is
         #   the slowest mode, but it is well tested and compatible with
         #   all Linux network devices and drivers.
         #
-        # "drv"
+        # "drv" (default)
         #   XDP provided by the device driver.  This mode is much faster
         #   than "skb" but only works for certain hardware.  May require
         #   very recent Linux versions.  Can be less stable than "skb"
@@ -972,7 +975,7 @@ dynamic_port_range = "8900-9000"
         # If the kernel/hardware does not support driver mode, then
         # `fdctl run` will fail to start up with "operation not
         # supported".
-        xdp_mode = "skb"
+        xdp_mode = "drv"
 
         # This option helps reduce CPU usage when receiving packets.
         # If enabled, the net tile instructs the network device to copy
@@ -984,7 +987,7 @@ dynamic_port_range = "8900-9000"
         # the xdp_mode option above).  If the kernel/hardware does not
         # support zero copy, `fdctl run` will fail to start up with
         # "operation not supported".
-        xdp_zero_copy = false
+        xdp_zero_copy = true
 
         # The poll_mode option determines how Firedancer polls NAPI (Linux's
         # high perf networking mechanisms).  Its possible values are:
